@@ -1,0 +1,35 @@
+name: Markdown to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # replace with your default branch if not 'main'
+
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14
+
+    - name: Install markdownlint
+      run: npm install -g markdownlint-cli
+
+    - name: Lint Markdown
+      run: markdownlint '**/*.md' --ignore node_modules
+  deploy:
+    needs:
+     - integration
+    runs-on:
+    steps:
+    - name: Build and Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GH_TOKEN }}
+        publish_dir: ./  # adjust if your markdown files are in a specific directory
