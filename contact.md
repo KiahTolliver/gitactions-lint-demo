@@ -7,7 +7,7 @@
 ## Professional Information
 
 **Position**: Senior Developer Advocate  
-**Company**: Okta
+**Company**: Auth0 by Okta
 
 ## Social Media / Website
 
