@@ -7,7 +7,7 @@
 ## Professional Information
 
 **Position**: Senior Developer Advocate  
-**Company**: Progress Chef
+**Company**: Okta
 
 ## Social Media / Website
 
